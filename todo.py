@@ -16,3 +16,12 @@ while True:
         print("Task added")
     else:
         print("Task cannot be empty")
+
+elif choice == "2":
+    if not tasks:
+        print("No tasks found")
+    else:
+        for i, t in enumerate(tasks, start=1):
+            status = "✔" if t["done"] else "✖"
+            print(f"{i}. {t['task']} [{status}]")
+
