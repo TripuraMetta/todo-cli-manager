@@ -10,13 +10,9 @@ while True:
     choice = input("Enter choice: ")
 
     if choice == "1":
-        task = input("Enter task: ")
-        tasks.append(task)
+    task = input("Enter task: ").strip()
+    if task:
+        tasks.append({"task": task, "done": False})
         print("Task added")
-    elif choice == "2":
-        for i, t in enumerate(tasks, start=1):
-            print(f"{i}. {t}")
-    elif choice == "3":
-        break
     else:
-        print("Invalid choice")
+        print("Task cannot be empty")
