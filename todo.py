@@ -3,7 +3,9 @@ tasks = []
 def menu():
     print("\n1. Add Task")
     print("2. View Tasks")
-    print("3. Exit")
+    print("3. Mark Task Complete")
+    print("4. Exit")
+
 
 while True:
     menu()
@@ -16,3 +18,9 @@ while True:
         print("Task added")
     else:
         print("Task cannot be empty")
+
+elif choice == "3":
+    num = int(input("Enter task number: "))
+    tasks[num-1]["done"] = True
+    print("Task marked complete")
+
