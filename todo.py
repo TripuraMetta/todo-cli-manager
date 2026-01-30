@@ -32,10 +32,17 @@ while True:
                 print(f"{i}. {t['task']} [{status}]")
 
     # MARK TASK AS COMPLETE
+
 elif choice == "3":
-    num = int(input("Enter task number: "))
-    tasks[num - 1]["done"] = True
-    print("Task marked as completed")
+    try:
+        num = int(input("Enter task number: "))
+        if 1 <= num <= len(tasks):
+            tasks[num - 1]["done"] = True
+            print("Task marked as completed")
+        else:
+            print("Invalid task number")
+    except ValueError:
+        print("Please enter a valid number")
 
 
     # DELETE TASK
